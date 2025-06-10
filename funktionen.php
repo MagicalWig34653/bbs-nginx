@@ -1,12 +1,12 @@
 <?php
 
 
-function begruesse(string $name): string
+function begrüße(string $name): string
 {
-    return 'Hallo ' . $name;
+    return 'Hallo ' . $name . '!';
 }
 
 
-echo begruesse('Max');
+echo begrüße('Max');
 echo '<br>';
-echo begruesse('Maria');
+echo begrüße('Maria');
