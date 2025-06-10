@@ -28,6 +28,9 @@ $links = [
     'Funktionen' => [
         'web' => 'funktionen.php'
     ],
+    'Klassen' => [
+        'web' => 'klassen.php'
+    ],
 ];
 $github = 'https://github.com/MagicalWig34653/bbs-nginx';
 
