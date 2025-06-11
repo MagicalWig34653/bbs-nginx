@@ -34,19 +34,41 @@ echo berechne_durchschnitt([
     4,
     5
 ]);
-echo '<br>';
-echo berechne_durchschnitt([
-    0,
-    2,
-    3,
-    200,
-    142
-]);
+
+###############################################
+
 
 echo '<br>';
-echo berechne_durchschnitt([
-    0
-]);
+try {
+    echo berechne_durchschnitt([
+        0,
+        2,
+        3,
+        200,
+        142
+    ]);
+} catch (\DivisionByZeroError $e) {
+    echo $e->getMessage();
+}
+
+###############################################
+
 
 echo '<br>';
-echo berechne_durchschnitt([]);
+try {
+    echo berechne_durchschnitt([
+        0
+    ]);
+} catch (\DivisionByZeroError $e) {
+    echo $e->getMessage();
+}
+
+
+###############################################
+
+echo '<br>';
+try {
+    echo berechne_durchschnitt([]);
+} catch (\DivisionByZeroError $e) {
+    echo $e->getMessage();
+}
