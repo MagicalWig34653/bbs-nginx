@@ -15,10 +15,8 @@ ini_set('display_errors', 1);
 function berechne_durchschnitt(array $array): float
 {
 
-    if ((count($array) == 0) or (count($array) == 1 and $array[0] == 0)) {
-//        throw new \InvalidArgumentException('Array must not be empty. (Dividing by zero is not possible)');
-        throw new \DivisionByZeroError('Array must not be empty. (Dividing by zero is not possible)');
-    }
+    if (count($array) == 0) throw new \DivisionByZeroError('Array must not be empty. (Dividing by zero is not possible)');
+
 
     $summe = 0;
     foreach ($array as $item) {
