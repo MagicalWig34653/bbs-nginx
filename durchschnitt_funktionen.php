@@ -5,12 +5,14 @@ ini_set('display_startup_errors', 1);
 ini_set('display_errors', 1);
 
 /**
- * Calculates the sum of all integer values within the given array.
+ * Berechnet den Durchschnitt der Zahlen in einem Array.
  *
- * @param array $array An array containing integer values to be summed.
- * @return float durchschnitt
+ * @param array $array Ein Array von Zahlen, dessen Durchschnitt berechnet werden soll.
+ *                      Das Array darf nicht leer sein oder nur den Wert 0 enthalten.
+ * @return float Der Durchschnittswert der Zahlen im Array.
+ * @throws \DivisionByZeroError Wenn das Array leer ist oder nur den Wert 0 enthält.
  */
-function array_durchschnitt(array $array): float
+function berechne_durchschnitt(array $array): float
 {
 
     if ((count($array) == 0) or (count($array) == 1 and $array[0] == 0)) {
@@ -27,7 +29,7 @@ function array_durchschnitt(array $array): float
 }
 
 
-echo array_durchschnitt([
+echo berechne_durchschnitt([
     1,
     2,
     3,
@@ -35,7 +37,7 @@ echo array_durchschnitt([
     5
 ]);
 echo '<br>';
-echo array_durchschnitt([
+echo berechne_durchschnitt([
     0,
     2,
     3,
@@ -44,9 +46,9 @@ echo array_durchschnitt([
 ]);
 
 echo '<br>';
-echo array_durchschnitt([
+echo berechne_durchschnitt([
     0
 ]);
 
 echo '<br>';
-echo array_durchschnitt([]);
+echo berechne_durchschnitt([]);
