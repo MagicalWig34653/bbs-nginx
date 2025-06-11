@@ -31,6 +31,9 @@ $links = [
     'Klassen' => [
         'web' => 'klassen.php'
     ],
+    'Durchschnitt Funktion' => [
+        'web' => 'durchschnitt_funktionen.php'
+    ],
 ];
 $github = 'https://github.com/MagicalWig34653/bbs-nginx';
 
