@@ -1,0 +1,52 @@
+<?php
+
+
+function berechne_durchschnitt(array $array): float
+{
+    if (count($array) == 0) throw new \DivisionByZeroError('Array must not be empty. (Dividing by zero is not possible)');
+    $summe = 0;
+    foreach ($array as $item) {
+        $summe += $item;
+    }
+    return $summe / count($array);
+}
+
+
+$noten = [];
+for ($i = 0; $i < 6; $i++) {
+    $noten[] = rand(1, 6);
+}
+
+echo implode(', ', $noten);
+echo '<br>';
+echo '<br>';
+
+/**
+ * @param array $noten
+ * @return bool
+ */
+function pruefungBestanden(array $noten): bool
+{
+    $fünf_vorhanden = false;
+    $sechs_vorhanden = false;
+    foreach ($noten as $item) {
+        if ($item == 5) $fünf_vorhanden = true;
+        if ($item == 6) $sechs_vorhanden = true;
+    }
+
+    $bestanden = true;
+    if (
+        $fünf_vorhanden or
+        $sechs_vorhanden or
+        !(berechne_durchschnitt($noten) < 4)
+    ) $bestanden = false;
+    return $bestanden;
+}
+
+$bestanden = pruefungBestanden($noten);
+
+if ($bestanden) {
+    echo 'Bestanden';
+} else {
+    echo 'Nicht bestanden';
+}

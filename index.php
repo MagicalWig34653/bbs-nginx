@@ -34,6 +34,9 @@ $links = [
     'Durchschnitt Funktion' => [
         'web' => 'durchschnitt_funktionen.php'
     ],
+    'Aufgaben Schwer 1.' => [
+        'web' => 'aufgabe_schwer_1.php'
+    ],
 ];
 $github = 'https://github.com/MagicalWig34653/bbs-nginx';
 
