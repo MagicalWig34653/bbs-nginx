@@ -1,5 +1,9 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
 
 function berechne_durchschnitt(array $array): float
 {
@@ -45,11 +49,14 @@ function pruefungBestanden(array $noten): bool
 
 $bestanden = pruefungBestanden($noten);
 
-if ($bestanden) {
-    echo 'Bestanden';
-} else {
-    echo 'Nicht bestanden';
-}
+//if ($bestanden) {
+//    echo 'Bestanden';
+//} else {
+//    echo 'Nicht bestanden';
+//}
+
+
+echo(pruefungBestanden($noten) ? 'Bestanden' : 'Nicht bestanden');
 
 
 $array = [
