@@ -27,16 +27,16 @@ echo '<br>';
  */
 function pruefungBestanden(array $noten): bool
 {
-    $fünf_vorhanden = false;
+    $fünf_vorhanden = 0;
     $sechs_vorhanden = false;
     foreach ($noten as $item) {
-        if ($item == 5) $fünf_vorhanden = true;
+        if ($item == 5) $fünf_vorhanden++;
         if ($item == 6) $sechs_vorhanden = true;
     }
 
     $bestanden = true;
     if (
-        $fünf_vorhanden or
+        ($fünf_vorhanden > 1) or
         $sechs_vorhanden or
         !(berechne_durchschnitt($noten) < 4)
     ) $bestanden = false;
@@ -50,3 +50,11 @@ if ($bestanden) {
 } else {
     echo 'Nicht bestanden';
 }
+
+
+$array = [
+    "Note1" => 1,
+    "Note2" => 2,
+    "Note3" => 3,
+    "Note4" => 4
+];
